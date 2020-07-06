@@ -1,0 +1,34 @@
+{
+  "name": "buddha-bhumi-cricket",
+  "version": "1.0.0",
+  "description": "Buddha Bhumi static website builer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass ../sass/main.scss ../assets/css/main.css",
+    "start": "nodemon index.js",
+    "build": "node index.js",
+    "prebuild": "npm run compress-images",
+    "compress-images": "node compress-images.js"
+  },
+  "author": "Nabin Karki Thapa",
+  "license": "ISC",
+  "devDependencies": {
+    "deepmerge": "^4.2.2",
+    "fs-extra": "^8.1.0",
+    "gray-matter": "^4.0.2",
+    "handlebars": "^4.7.3",
+    "jimp": "^0.9.3",
+    "klaw-sync": "^6.0.0",
+    "node-sass": "^4.13.1",
+    "nodemon": "^2.0.2"
+  },
+  "nodemonConfig": {
+    "ext": "html,js,scss,json",
+    "delay": 500,
+    "watch": "../",
+    "ignore": [
+      "../_dist/"
+    ]
+  }
+}
