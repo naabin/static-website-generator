@@ -1,5 +1,5 @@
 {
-  "name": "static-website-generator",
+  "name": "static-website-generate",
   "version": "1.0.0",
   "description": "Static website builer",
   "main": "index.js",
