@@ -1,6 +1,6 @@
 {
   "name": "static-website-generate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Static website builer",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "author": "Nabin Karki Thapa and Nabin Karki",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "deepmerge": "^4.2.2",
     "fs-extra": "^8.1.0",
     "gray-matter": "^4.0.2",
