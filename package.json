@@ -30,5 +30,8 @@
     "ignore": [
       "../_dist/"
     ]
+  },
+  "bin": {
+    "scg": "./bin/cli"
   }
 }
