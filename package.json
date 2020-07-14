@@ -1,6 +1,6 @@
 {
   "name": "static-website-generate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Static website builer",
   "main": "index.js",
   "scripts": {
