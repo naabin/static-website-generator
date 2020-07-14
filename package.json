@@ -1,7 +1,7 @@
 {
-  "name": "buddha-bhumi-cricket",
+  "name": "static-website-generate",
   "version": "1.0.0",
-  "description": "Buddha Bhumi static website builer",
+  "description": "Static website builer",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
     "prebuild": "npm run compress-images",
     "compress-images": "node compress-images.js"
   },
-  "author": "Nabin Karki Thapa",
+  "author": "Nabin Karki Thapa and Nabin Karki",
   "license": "ISC",
   "devDependencies": {
     "deepmerge": "^4.2.2",
