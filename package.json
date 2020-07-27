@@ -1,15 +1,15 @@
 {
   "name": "static-website-generate",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Static website builer",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass ../sass/main.scss ../assets/css/main.css",
-    "start": "nodemon index.js",
-    "build": "node index.js",
-    "prebuild": "npm run compress-images",
-    "compress-images": "node compress-images.js"
+    "build": "tsc",
+    "clean": "rimraf lib",
+    "prepublish": "yarn run build",
+    "lint": "tslint --fix"
   },
   "author": "Nabin Karki Thapa and Nabin Karki",
   "license": "ISC",
@@ -17,11 +17,20 @@
     "deepmerge": "^4.2.2",
     "fs-extra": "^8.1.0",
     "gray-matter": "^4.0.2",
-    "handlebars": "^4.7.3",
+    "handlebars": "^4.7.6",
     "jimp": "^0.9.3",
     "klaw-sync": "^6.0.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "nodemon": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.1",
+    "@types/klaw-sync": "^6.0.0",
+    "@types/node": "^14.0.23",
+    "@types/node-sass": "^4.11.1",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.6",
+    "rimraf": "3.0.2"
   },
   "nodemonConfig": {
     "ext": "html,js,scss,json",
@@ -32,6 +41,7 @@
     ]
   },
   "bin": {
-    "scg": "./bin/cli"
+    "scg-build": "./bin/build.js",
+    "scg-compress-images": "./bin/compress-images.js"
   }
 }

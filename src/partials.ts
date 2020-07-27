@@ -1,9 +1,10 @@
-const klawsync = require('klaw-sync');
-const path = require('path');
-const handlebars = require('handlebars');
-const fsextra = require('fs-extra');
+import klawsync from 'klaw-sync';
+import path from 'path';
+import handlebars from 'handlebars';
+import fsextra from 'fs-extra';
+import { BuildContext } from './types';
 
-module.exports = (partialsDir) => klawsync(partialsDir, {
+export default (partialsDir: string) => klawsync(partialsDir, {
     filter: f => f.path.endsWith('.html'),
     depthLimit: 0,
     nodir: true
@@ -13,7 +14,7 @@ module.exports = (partialsDir) => klawsync(partialsDir, {
         const template = handlebars.compile(fsextra.readFileSync(f.path, { encoding: 'utf-8' }));
         return {
             partialName,
-            fn: (ctx) => template(ctx)
+            fn: (ctx: BuildContext) => template(ctx)
 
         }
     }

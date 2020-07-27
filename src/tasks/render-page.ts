@@ -1,7 +1,9 @@
-const graymatter = require("gray-matter");
-const handlebars = require("handlebars");
-const fsextra = require("fs-extra");
-const deepmerge = require("deepmerge");
+import graymatter from "gray-matter";
+import handlebars from "handlebars";
+import fsextra from "fs-extra";
+import deepmerge from "deepmerge";
+import { BuildContext } from "../types";
+import { Layouts } from "../layouts";
 
 function buildMetaData() {
     return {
@@ -9,19 +11,19 @@ function buildMetaData() {
     }
 }
 
-function renderFile(filePath, ctx) {
+export function renderFile(filePath: string, ctx?: BuildContext) {
     const fileRawContent = fsextra.readFileSync(filePath);
-    return render(fileRawContent, ctx);
+    return render(fileRawContent, ctx || {});
 }
 
-function render(raw, initCtx) {
+export function render(raw: Buffer, initCtx: Partial<BuildContext>) {
     const { content, data } = graymatter(raw);
     const ctx = deepmerge(deepmerge(initCtx, data), buildMetaData());
     const html = handlebars.compile(content)(ctx);
     return { ctx, html }
 }
 
-function withLayout(layouts, ctx, main) {
+export function withLayout(layouts: Layouts, ctx: BuildContext, main: any) {
     const { layout, ...rest } = ctx;
     if (layout) {
         console.log('Rendering layout: ' + layout)
@@ -31,5 +33,3 @@ function withLayout(layouts, ctx, main) {
     }
     return main;
 }
-
-module.exports = { render, withLayout, renderFile };
