@@ -1,7 +1,7 @@
-const handlebars = require('handlebars');
+import handlebars from 'handlebars';
 
-module.exports = {
-    "formatDate": (dateString) => {
+export default {
+    "formatDate": (dateString: string) => {
         return new handlebars.SafeString(
             new Date(dateString).toISOString().split('T')[0]
         );
