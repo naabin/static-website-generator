@@ -57,7 +57,7 @@ export default (rootDir: string = process.cwd()) => {
         })
         const finalHtml = withLayout(allLayouts, ctx, html);
         const distFilePath = path.join(distDir, relativePath);
-        fsextra.ensureDirSync(distFilePath)
+        fsextra.ensureFileSync(distFilePath)
         fsextra.writeFileSync(distFilePath, finalHtml);
     }
 
