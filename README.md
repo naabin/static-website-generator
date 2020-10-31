@@ -8,7 +8,7 @@ A basic static site generator using node.
 - JSON data, File based data
 - SASS support
 
-## TODO Featues
+## TODO Features
 - [ ] JSX Support
 - [ ] Pagination of data
 - [ ] Plugin support
