@@ -10,7 +10,7 @@ A basic static site generator using node.
 
 ## TODO Features
 - [ ] JSX Support
-- [ ] Pagination of data
+- [ ] Pagination
 - [ ] Plugin support
 
 ## Usage
