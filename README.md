@@ -20,4 +20,4 @@ npm i -g static-website-generate && scg-build
 ```
 
 ## Used by
-- Buddha Bhumi Cricket Website [Site](https://github.com/naabin/static-website-generator) | [Source](https://www.buddhabhumicricket.com/)
+- Buddha Bhumi Cricket Website [Source](https://github.com/naabin/static-website-generator) | [Site](https://www.buddhabhumicricket.com/)
