@@ -20,7 +20,7 @@
     "handlebars": "^4.7.6",
     "jimp": "^0.9.3",
     "klaw-sync": "^6.0.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.2"
   },
   "devDependencies": {
